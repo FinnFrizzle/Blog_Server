@@ -24,8 +24,8 @@ class PostNew extends React.Component {
   }
 
   render() {
-    // let redux-form handle validation etc (this.probs is comming form redux-form)
-    const { handleSubmit } = this.probs;
+    // let redux-form handle validation etc (this.probs is comming from redux-form)
+    const { handleSubmit } = this.props;
 
     return (
       <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
@@ -59,7 +59,6 @@ function validate(value) {
   if (!value.contents) {
     error.title = "Enter some contents"
   }
-
 
   // if error = {}, form is valid! If any other stuff, not vaild!
   return error;
